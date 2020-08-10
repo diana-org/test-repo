@@ -16,10 +16,3 @@ jobs:
     - uses: actions/labeler@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
-  team-labeler:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/labeler@v2
-        if: github.event.pusher.name != "@agnes512"
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
