@@ -19,6 +19,7 @@ jobs:
   team-labeler:
       runs-on: ubuntu-latest
       steps:
-      - uses: JulienKode/team-labeler-action@v0.1.0
+      - uses: actions/labeler@v2
+        if: github.event.pusher.name != "@agnes512"
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
