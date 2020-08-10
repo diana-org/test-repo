@@ -16,3 +16,7 @@ jobs:
     - uses: actions/labeler@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+    - name: set contribution
+      if: ${{github.event.pusher.name == 'dhmlau'}}
+      script: |
+        github.issues.addLabels({...context.issue, labels: ['community-contribution'] })
